@@ -9,13 +9,13 @@ class CreateFks extends Migration
 
     public function up()
     {
-        Schema::table('lgas', function (Blueprint $table) {
+        Schema::table('municipios', function (Blueprint $table) {
             $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
         });
 
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('state_id')->references('id')->on('states')->onDelete('set null');
-            $table->foreign('lga_id')->references('id')->on('lgas')->onDelete('set null');
+            $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete('set null');
             $table->foreign('bg_id')->references('id')->on('blood_groups')->onDelete('set null');
             $table->foreign('nal_id')->references('id')->on('nationalities')->onDelete('set null');
         });

@@ -17,13 +17,13 @@ class AjaxController extends Controller
         $this->my_class = $my_class;
     }
 
-    public function get_lga($state_id)
+    public function get_municipio($state_id)
     {
 //        $state_id = Qs::decodeHash($state_id);
 //        return ['id' => Qs::hash($q->id), 'name' => $q->name];
 
-        $lgas = $this->loc->getLGAs($state_id);
-        return $data = $lgas->map(function($q){
+        $municipios = $this->loc->getMUNICIPIOS($state_id);
+        return $data = $municipios->map(function($q){
             return ['id' => $q->id, 'name' => $q->name];
         })->all();
     }

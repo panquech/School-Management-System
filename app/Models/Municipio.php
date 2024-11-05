@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Eloquent;
 
-class Lga extends Eloquent
+class Municipio extends Eloquent
 {
     public function ministry()
     {

@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Nationality;
 use App\Models\State;
-use App\Models\Lga;
+use App\Models\Municipio;
 
 class LocationRepo
 {
@@ -23,9 +23,9 @@ class LocationRepo
         return Nationality::orderBy('name', 'asc')->get();
     }
 
-    public function getLGAs($state_id)
+    public function getMUNICIPIOs($state_id)
     {
-        return Lga::where('state_id', $state_id)->orderBy('name', 'asc')->get();
+        return Municipio::where('state_id', $state_id)->orderBy('name', 'asc')->get();
     }
 
 }
