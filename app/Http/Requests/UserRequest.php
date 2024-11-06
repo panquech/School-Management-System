@@ -31,7 +31,7 @@ class UserRequest extends FormRequest
             'photo' => 'sometimes|nullable|image|mimes:jpeg,gif,png,jpg|max:2048',
             'address' => 'required|string|min:6|max:120',
             'state_id' => 'required',
-            'lga_id' => 'required',
+            'municipio_id' => 'required',
             'nal_id' => 'required',
         ];
         $update =  [

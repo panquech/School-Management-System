@@ -77,10 +77,10 @@
                                         <td>{{$user->state->name }}</td>
                                     </tr>
                                 @endif
-                                @if($user->lga_id)
+                                @if($user->municipio_id)
                                     <tr>
-                                        <td class="font-weight-bold">LGA</td>
-                                        <td>{{$user->lga->name }}</td>
+                                        <td class="font-weight-bold">MUNICIPIO</td>
+                                        <td>{{$user->municipio->name }}</td>
                                     </tr>
                                 @endif
                                 @if($user->user_type == 'parent')

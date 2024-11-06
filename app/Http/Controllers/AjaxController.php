@@ -22,7 +22,7 @@ class AjaxController extends Controller
 //        $state_id = Qs::decodeHash($state_id);
 //        return ['id' => Qs::hash($q->id), 'name' => $q->name];
 
-        $municipios = $this->loc->getMUNICIPIOS($state_id);
+        $municipios = $this->loc->getMUNICIPIOs($state_id);
         return $data = $municipios->map(function($q){
             return ['id' => $q->id, 'name' => $q->name];
         })->all();

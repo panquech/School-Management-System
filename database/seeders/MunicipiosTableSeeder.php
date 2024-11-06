@@ -17,27 +17,55 @@ class MunicipiosTableSeeder extends Seeder
             // Ciudad de México
             7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
             // Estado de México
-            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11
+            11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11
 
         ];
 
         $municipios = [
             // Ciudad de México
-            "Álvaro Obregón", "Azcapotzalco", "Benito Juárez", "Coyoacán", "Cuajimalpa de Morelos", "Gustavo A. Madero", "Iztacalco", 
-            "Iztapalapa", "Magdalena Contreras", "Miguel Hidalgo", "Milpa Alta", "Tlalpan", "Tláhuac", "Venustiano Carranza", 
+            "Álvaro Obregón", 
+            "Azcapotzalco", 
+            "Benito Juárez", 
+            "Coyoacán", 
+            "Cuajimalpa de Morelos", 
+            "Cuauhtémoc", 
+            "Gustavo A. Madero", 
+            "Iztacalco", 
+            "Iztapalapa", 
+            "La Magdalena Contreras", 
+            "Miguel Hidalgo", 
+            "Milpa Alta", 
+            "Tláhuac", 
+            "Tlalpan", 
+            "Venustiano Carranza", 
             "Xochimilco",
             // Estado de México
-            "Acolman", "Almoloya de Alquisiras", "Almoloya de Juárez", "Amanalco", "Amecameca", "Apaxco", "Atenco", "Atizapán de Zaragoza", 
-            "Atlacomulco", "Axapusco", "Ayapango", "Calimaya", "Capulhuac", "Chalco", "Chapa de Mota", "Chapultepec", "Chiautla", 
-            "Chicoloapan", "Chimalhuacán", "Coacalco de Berriozábal", "Cocotitlán", "Coyotepec", "Cuautitlán", "Cuautitlán Izcalli", 
-            "Donato Guerra", "Ecatepec de Morelos", "El Oro", "Hueypoxtla", "Hueytlalpan", "Ixtapaluca", "Ixtapan de la Sal", 
-            "Ixtapan del Oro", "Jaltenco", "Jiquipilco", "Jocotitlán", "Joquicingo", "La Paz", "Lerma", "Luvianos", "Malinalco", 
-            "Melchor Múzquiz", "Metepec", "Mexicaltzingo", "Morelos", "Naucalpan de Juárez", "Nextlalpan", "Nezahualcóyotl", 
-            "Ocoyoacac", "Otzolotepec", "Otumba", "Ozumba", "Polotitlán", "Rayón", "San Antonio la Isla", "San Felipe del Progreso", 
-            "San Martín de las Pirámides", "San Mateo Atenco", "San Simón de Guerrero", "Santo Tomás", "Tepetlaoxtoc", "Teoloyucan", 
-            "Teotihuacán", "Tepetlixpa", "Tequixquiac", "Texcoco", "Tlalmanalco", "Tlalnepantla de Baz", "Toluca", "Tultepec", 
-            "Tultitlán", "Valle de Bravo", "Valle de Chalco Solidaridad", "Villa de Allende", "Villa de Arista", "Villa Guerrero", 
-            "Villa Victoria", "Xonacatlán", "Zacazonapan", "Zacualpan", "Zinacantepec"
+            "Acambay de Ruiz Castañeda", "Acolman", "Aculco", "Almoloya de Alquisiras", "Almoloya de Juárez", 
+            "Almoloya del Río", "Amanalco", "Amatepec", "Amecameca", "Apaxco", 
+            "Atenco", "Atizapán", "Atizapán de Zaragoza", "Atlacomulco", "Atlautla", 
+            "Axapusco", "Ayapango", "Calimaya", "Capulhuac", "Coacalco de Berriozábal", 
+            "Coatepec Harinas", "Cocotitlán", "Coyotepec", "Cuautitlán", "Chalco", 
+            "Chapa de Mota", "Chapultepec", "Chiautla", "Chicoloapan", "Chiconcuac", 
+            "Chimalhuacán", "Donato Guerra", "Ecatepec de Morelos", "Ecatzingo", "Huehuetoca", 
+            "Hueypoxtla", "Huixquilucan", "Isidro Fabela", "Ixtapaluca", "Ixtapan de la Sal", 
+            "Ixtapan del Oro", "Ixtlahuaca", "Xalatlaco", "Jaltenco", "Jilotepec", 
+            "Jilotzingo", "Jiquipilco", "Jocotitlán", "Joquicingo", "Juchitepec", 
+            "Lerma", "Malinalco", "Melchor Ocampo", "Metepec", "Mexicaltzingo", 
+            "Morelos", "Naucalpan de Juárez", "Nezahualcóyotl", "Nextlalpan", "Nicolás Romero", 
+            "Nopaltepec", "Ocoyoacac", "Ocuilan", "El Oro", "Otumba", 
+            "Otzoloapan", "Otzolotepec", "Ozumba", "Papalotla", "La Paz", 
+            "Polotitlán", "Rayón", "San Antonio la Isla", "San Felipe del Progreso", "San Martín de las Pirámides", 
+            "San Mateo Atenco", "San Simón de Guerrero", "Santo Tomás", "Soyaniquilpan de Juárez", "Sultepec", 
+            "Tecámac", "Tejupilco", "Temamatla", "Temascalapa", "Temascalcingo", 
+            "Temascaltepec", "Temoaya", "Tenancingo", "Tenango del Aire", "Tenango del Valle", 
+            "Teoloyucan", "Teotihuacán", "Tepetlaoxtoc", "Tepetlixpa", "Tepotzotlán", 
+            "Tequixquiac", "Texcaltitlán", "Texcalyacac", "Texcoco", "Tezoyuca", 
+            "Tianguistenco", "Timilpan", "Tlalmanalco", "Tlalnepantla de Baz", "Tlatlaya", 
+            "Toluca", "Tonatico", "Tultepec", "Tultitlán", "Valle de Bravo", 
+            "Villa de Allende", "Villa del Carbón", "Villa Guerrero", "Villa Victoria", "Xonacatlán", 
+            "Zacazonapan", "Zacualpan", "Zinacantepec", "Zumpahuacán", "Zumpango", 
+            "Cuautitlán Izcalli", "Valle de Chalco Solidaridad", "Luvianos", "San José del Rincón", "Tonanitla"
+        
         ];
 
         for($i=0; $i<count($municipios); $i++){

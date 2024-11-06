@@ -91,10 +91,10 @@
                                 <td>{{$sr->user->state->name }}</td>
                             </tr>
                             @endif
-                            @if($sr->user->lga_id)
+                            @if($sr->user->municipio_id)
                             <tr>
-                                <td class="font-weight-bold">LGA</td>
-                                <td>{{$sr->user->lga->name }}</td>
+                                <td class="font-weight-bold">MUNICIPIO</td>
+                                <td>{{$sr->user->municipio->name }}</td>
                             </tr>
                             @endif
                             @if($sr->dorm_id)

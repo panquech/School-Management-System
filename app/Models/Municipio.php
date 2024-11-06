@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\User;
 use Eloquent;
 
 class Municipio extends Eloquent
 {
-    public function ministry()
+    public function user()
     {
-       // return $this->hasMany(Ministry::class);
+        return $this->hasOne(User::class);
     }
 }

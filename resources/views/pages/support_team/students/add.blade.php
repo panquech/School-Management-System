@@ -86,7 +86,7 @@
 
                         <div class="col-md-3">
                             <label for="state_id">State: <span class="text-danger">*</span></label>
-                            <select onchange="getLGA(this.value)" required data-placeholder="Choose.." class="select-search form-control" name="state_id" id="state_id">
+                            <select onchange="getMUNICIPIO(this.value)" required data-placeholder="Choose.." class="select-search form-control" name="state_id" id="state_id">
                                 <option value=""></option>
                                 @foreach($states as $st)
                                     <option {{ (old('state_id') == $st->id ? 'selected' : '') }} value="{{ $st->id }}">{{ $st->name }}</option>
@@ -95,8 +95,8 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="lga_id">LGA: <span class="text-danger">*</span></label>
-                            <select required data-placeholder="Select State First" class="select-search form-control" name="lga_id" id="lga_id">
+                            <label for="municipio_id">MUNICIPIO: <span class="text-danger">*</span></label>
+                            <select required data-placeholder="Select State First" class="select-search form-control" name="municipio_id" id="municipio_id">
                                 <option value=""></option>
                             </select>
                         </div>

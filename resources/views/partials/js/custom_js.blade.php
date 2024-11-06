@@ -1,18 +1,18 @@
 <script>
 
-    function getLGA(state_id){
-        var url = '{{ route('get_lga', [':id']) }}';
+    function getMUNICIPIO(state_id){
+        var url = '{{ route('get_municipio', [':id']) }}';
         url = url.replace(':id', state_id);
-        var lga = $('#lga_id');
+        var municipio = $('#municipio_id');
 
         $.ajax({
             dataType: 'json',
             url: url,
             success: function (resp) {
                 //console.log(resp);
-                lga.empty();
+                municipio.empty();
                 $.each(resp, function (i, data) {
-                    lga.append($('<option>', {
+                    municipio.append($('<option>', {
                         value: data.id,
                         text: data.name
                     }));
