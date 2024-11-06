@@ -33,6 +33,8 @@ class UserRequest extends FormRequest
             'state_id' => 'required',
             'municipio_id' => 'required',
             'nal_id' => 'required',
+            'curp' => 'required|string|size:18',
+            'rfc' => 'required|string|size:13'
         ];
         $update =  [
             'name' => 'required|string|min:6|max:150',
@@ -45,6 +47,8 @@ class UserRequest extends FormRequest
             'state_id' => 'required',
             'lga_id' => 'required',
             'nal_id' => 'required',
+            'curp' => 'required|string|size:18',
+            'rfc' => 'required|string|size:13'
         ];
         return ($this->method() === 'POST') ? $store : $update;
     }

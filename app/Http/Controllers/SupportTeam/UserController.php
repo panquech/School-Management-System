@@ -83,6 +83,9 @@ class UserController extends Controller
         $pass = $req->password ?: $user_type;
         $data['password'] = Hash::make($pass);
 
+        $data['curp'] = $req->curp;
+        $data['rfc'] = $req->rfc;
+
         if($req->hasFile('photo')) {
             $photo = $req->file('photo');
             $f = Qs::getFileMetaData($photo);

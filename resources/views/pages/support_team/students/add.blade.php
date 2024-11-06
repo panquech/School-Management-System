@@ -103,7 +103,21 @@
                     </div>
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>CURP: <span class="text-danger">*</span></label>
+                                    <input type="text" value="{{ old('curp') }}" name="curp" class="form-control" placeholder="CURP">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="bg_id">RFC: <span class="text-danger">*</span></label>
+                                    <input type="text" value="{{ old('rfc') }}" name="rfc" class="form-control" placeholder="RFC">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="bg_id">Blood Group: </label>
                                 <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
@@ -115,7 +129,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label class="d-block">Upload Passport Photo:</label>
                                 <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
