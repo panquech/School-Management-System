@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="municipio_id">MUNICIPIO: <span class="text-danger">*</span></label>
+                            <label for="municipio_id">Municipio: <span class="text-danger">*</span></label>
                             <select required data-placeholder="Select State First" class="select-search form-control" name="municipio_id" id="municipio_id">
                                 <option value=""></option>
                             </select>
@@ -108,11 +108,11 @@
                                 <label>CURP: <span class="text-danger">*</span></label>
                                     <input type="text" value="{{ old('curp') }}" name="curp" class="form-control" placeholder="CURP">
                             </div>
-                        </div>
+                        </div>                       
                         
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="bg_id">RFC: <span class="text-danger">*</span></label>
+                                <label>RFC: <span class="text-danger">*</span></label>
                                     <input type="text" value="{{ old('rfc') }}" name="rfc" class="form-control" placeholder="RFC">
                             </div>
                         </div>

@@ -25,7 +25,10 @@ class UserUpdate extends FormRequest
             'email' => 'sometimes|nullable|email|max:100|unique:users,id',
             'username' => 'sometimes|nullable|alpha_dash|min:8|max:100|unique:users',
             'photo' => 'sometimes|nullable|image|mimes:jpeg,gif,png,jpg|max:2048',
-            'address' => 'required|string|min:6|max:120'
+            'address' => 'required|string|min:6|max:120',
+            'municipio_id' => 'required',
+            'curp' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{7}[0-9]{1}$/|size:18',
+            'rfc' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{3}$/|size:13'
         ];
     }
 
@@ -34,7 +37,7 @@ class UserUpdate extends FormRequest
         return  [
             'nal_id' => 'Nationality',
             'state_id' => 'State',
-            'municipio_id' => 'LGA',
+            'municipio_id' => 'Municipio',
             'phone2' => 'Telephone',
         ];
     }

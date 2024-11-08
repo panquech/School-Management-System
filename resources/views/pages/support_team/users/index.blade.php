@@ -127,7 +127,7 @@
 
                             <div class="row">
                                 {{--State--}}
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <label for="state_id">State: <span class="text-danger">*</span></label>
                                     <select onchange="getMUNICIPIO(this.value)" required data-placeholder="Choose.." class="select-search form-control" name="state_id" id="state_id">
                                         <option value=""></option>
@@ -137,24 +137,27 @@
                                     </select>
                                 </div>
                                 {{--MUNICIPIO--}}
-                                <div class="col-md-4">
-                                    <label for="municipio_id">MUNICIPIO: <span class="text-danger">*</span></label>
+                                <div class="col-md-3">
+                                    <label for="municipio_id">Municipio: <span class="text-danger">*</span></label>
                                     <select required data-placeholder="Select State First" class="select-search form-control" name="municipio_id" id="municipio_id">
                                         <option value=""></option>
                                     </select>
                                 </div>
-                                {{--BLOOD GROUP--}}
-                                <div class="col-md-4">
+                                {{--CURP--}}
+                                <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="bg_id">Blood Group: </label>
-                                        <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
-                                            <option value=""></option>
-                                            @foreach($blood_groups as $bg)
-                                                <option {{ (old('bg_id') == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
-                                            @endforeach
-                                        </select>
+                                        <label>CURP: <span class="text-danger">*</span></label>
+                                            <input type="text" value="{{ old('curp') }}" name="curp" class="form-control" placeholder="CURP">
                                     </div>
                                 </div>
+                                {{--RFC--}}
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>RFC: <span class="text-danger">*</span></label>
+                                            <input type="text" value="{{ old('rfc') }}" name="rfc" class="form-control" placeholder="RFC">
+                                    </div>
+                                </div>
+                                
 
                             </div>
 
@@ -165,6 +168,18 @@
                                         <label class="d-block">Upload Passport Photo:</label>
                                         <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
                                         <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
+                                    </div>
+                                </div>
+                                {{--BLOOD GROUP--}}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="bg_id">Blood Group: </label>
+                                        <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
+                                            <option value=""></option>
+                                            @foreach($blood_groups as $bg)
+                                                <option {{ (old('bg_id') == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>

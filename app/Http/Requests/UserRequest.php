@@ -33,8 +33,8 @@ class UserRequest extends FormRequest
             'state_id' => 'required',
             'municipio_id' => 'required',
             'nal_id' => 'required',
-            'curp' => 'required|string|size:18',
-            'rfc' => 'required|string|size:13'
+            'curp' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{7}[0-9]{1}$/|size:18',
+            'rfc' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{3}$/|size:13'
         ];
         $update =  [
             'name' => 'required|string|min:6|max:150',
@@ -45,10 +45,10 @@ class UserRequest extends FormRequest
             'photo' => 'sometimes|nullable|image|mimes:jpeg,gif,png,jpg|max:2048',
             'address' => 'required|string|min:6|max:120',
             'state_id' => 'required',
-            'lga_id' => 'required',
+            'municipio_id' => 'required',
             'nal_id' => 'required',
-            'curp' => 'required|string|size:18',
-            'rfc' => 'required|string|size:13'
+            'curp' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{7}[0-9]{1}$/|size:18',
+            'rfc' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{3}$/|size:13'
         ];
         return ($this->method() === 'POST') ? $store : $update;
     }
@@ -61,6 +61,8 @@ class UserRequest extends FormRequest
             'lga_id' => 'LGA',
             'user_type' => 'User',
             'phone2' => 'Telephone',
+            'curp' => 'CURP',
+            'rfc' => 'RFC'
         ];
     }
 

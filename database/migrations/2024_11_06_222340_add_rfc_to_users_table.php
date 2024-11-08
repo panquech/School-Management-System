@@ -15,8 +15,8 @@ class AddRfcToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             // se ponen nullable ya que los registro anteriores no tienen estos campos y de otro modo daría error.
-            $table->string('rfc', 13)->after('name')->nullable();
-            $table->string('curp', 18)->after('name')->nullable();
+            $table->string('rfc', 13)->after('name')->nullable()->unique();
+            $table->string('curp', 18)->after('name')->nullable()->unique();
         });
     }
 
