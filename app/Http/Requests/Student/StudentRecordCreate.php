@@ -37,6 +37,8 @@ class StudentRecordCreate extends FormRequest
             'section_id' => 'required',
             'my_parent_id' => 'sometimes|nullable',
             'dorm_id' => 'sometimes|nullable',
+            'curp' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{7}[0-9]{1}$/|size:18',
+            'rfc' => 'required|regex:/^[A-Z]{4}[0-9]{6}[A-Z]{3}$/|size:13'
         ];
     }
 
@@ -51,6 +53,8 @@ class StudentRecordCreate extends FormRequest
             'municipio_id' => 'Municipio',
             'bg_id' => 'Blood Group',
             'my_parent_id' => 'Parent',
+            'curp' => 'CURP',
+            'rfc' => 'RFC'
         ];
     }
 

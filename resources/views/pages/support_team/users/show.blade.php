@@ -79,7 +79,7 @@
                                 @endif
                                 @if($user->municipio_id)
                                     <tr>
-                                        <td class="font-weight-bold">MUNICIPIO</td>
+                                        <td class="font-weight-bold">Municipio</td>
                                         <td>{{$user->municipio->name }}</td>
                                     </tr>
                                 @endif

@@ -66,6 +66,7 @@ class UserController extends Controller
 
     public function store(UserRequest $req)
     {
+        
         $user_type = $this->user->findType($req->user_type)->title;
 
         $data = $req->except(Qs::getStaffRecord());
@@ -82,10 +83,6 @@ class UserController extends Controller
 
         $pass = $req->password ?: $user_type;
         $data['password'] = Hash::make($pass);
-
-        $data['curp'] = $req->curp;
-        $data['rfc'] = $req->rfc;
-
         if($req->hasFile('photo')) {
             $photo = $req->file('photo');
             $f = Qs::getFileMetaData($photo);
