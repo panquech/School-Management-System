@@ -22,13 +22,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    // Array con los campos que se pueden rellenar de los usuarios
-    protected $fillable = ['name', 'apellido1', 'apellido2', 'email', 'confirmado', 'password', 'codigo_confirmacion', 'ruta_imagen'];
-    protected $guarded = ['id'];
-
-    public function aspirante(){
-        return $this->hasOne(Aspirantes::class,'user_id','id');
-    }
+    protected $fillable = [
+        'name', 'username', 'email', 'phone', 'phone2', 'dob', 'gender', 'photo', 'address', 'bg_id', 'password', 'nal_id', 'state_id', 'municipio_id', 'code', 'user_type', 'email_verified_at'
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
