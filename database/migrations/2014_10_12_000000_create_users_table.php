@@ -17,22 +17,15 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('apellido1')->nullable(true);
+            $table->string('apellido2')->nullable(true);
             $table->string('email', 100)->unique()->nullable();
             $table->string('code', 100)->unique();
-            $table->string('username', 100)->nullable()->unique();
-            $table->string('user_type');
-            $table->string('dob')->nullable();
-            $table->string('gender')->nullable();
-            $table->string('photo')->default(Qs::getDefaultUserImage());
-            $table->string('phone')->nullable();
-            $table->string('phone2')->nullable();
-            $table->unsignedInteger('bg_id')->nullable();
-            $table->unsignedInteger('state_id')->nullable();
-            $table->unsignedInteger('municipio_id')->nullable();
-            $table->unsignedInteger('nal_id')->nullable();
-            $table->string('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('confirmado')->nullable(true)->default(0)->comment('Almacena un indicador para saber si el usuario ya validó o no su email');
             $table->string('password');
+            $table->string('codigo_confirmacion',30)->nullable(true)->default(null)->comment('Almacena un código único aleatorio para la confirmación del usuario a través de su correo electrónico');
+            $table->string('ruta_imagen', 300)->nullable(true);
             $table->rememberToken();
             $table->timestamps();
         });

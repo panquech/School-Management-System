@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Eloquent;
 
-class Nationality extends Eloquent
+class CatNacionalidades extends Eloquent
 {
     //
 }
