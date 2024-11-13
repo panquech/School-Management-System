@@ -2,20 +2,15 @@
 
 namespace App;
 
-use App\Models\BloodGroup;
-use App\Models\Municipio;
-use App\Models\Nationality;
-use App\Models\StaffRecord;
-use App\Models\State;
-use App\Models\StudentRecord;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use LaratrustUserTrait;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'phone', 'phone2', 'dob', 'gender', 'photo', 'address', 'bg_id', 'password', 'nal_id', 'state_id', 'municipio_id', 'code', 'user_type', 'email_verified_at'
+        'name', 'email', 'password', 'codigo_confirmacion',
     ];
 
     /**
@@ -35,33 +30,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function student_record()
-    {
-        return $this->hasOne(StudentRecord::class);
-    }
-
-    public function municipio()
-    {
-        return $this->belongsTo(Municipio::class);
-    }
-
-    public function state()
-    {
-        return $this->belongsTo(State::class);
-    }
-
-    public function nationality()
-    {
-        return $this->belongsTo(Nationality::class, 'nal_id');
-    }
-
-    public function blood_group()
-    {
-        return $this->belongsTo(BloodGroup::class, 'bg_id');
-    }
-
-    public function staff()
-    {
-        return $this->hasMany(StaffRecord::class);
-    }
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

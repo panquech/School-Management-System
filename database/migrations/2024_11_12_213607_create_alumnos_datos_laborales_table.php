@@ -24,12 +24,12 @@ class CreateAlumnosDatosLaboralesTable extends Migration
             $table->timestamps();
 
             // Declaración de llaves foráneas
-            $table->foreign('solicitud_id')->references('id')->on('solicitudes_aspirantes')->onUpdate('cascade');
+            //$table->foreign('solicitud_id')->references('id')->on('solicitudes_aspirantes')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
         });
 
         // Se añade un comentario de tabla
-        DB::statement('ALTER TABLE aspirantes_datos_laborales COMMENT = "Tabla que almacena lo relacionado con los datos laborales de los aspirantes cuando realizan una solicitud"');
+        DB::statement('ALTER TABLE alumnos_datos_laborales COMMENT = "Tabla que almacena lo relacionado con los datos laborales de los alumnos cuando realizan una solicitud"');
     }
 
     /**
@@ -39,6 +39,6 @@ class CreateAlumnosDatosLaboralesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aspirantes_datos_laborales');
+        Schema::dropIfExists('alumnos_datos_laborales');
     }
 }

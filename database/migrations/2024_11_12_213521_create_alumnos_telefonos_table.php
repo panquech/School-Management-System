@@ -23,12 +23,12 @@ class CreateAlumnosTelefonosTable extends Migration
             $table->timestamps();
 
             // Llaves foráneas de la tabla
-            $table->foreign('solicitud_id')->references('id')->on('solicitudes_aspirantes')->onUpdate('cascade');
+            //$table->foreign('solicitud_id')->references('id')->on('solicitudes_aspirantes')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
         });
 
         // Comentarios adicionales de la tabla
-        DB::statement('ALTER TABLE aspirantes_telefonos COMMENT = "Almacena la información relacionada con los números telefónicos de contacto del aspirante"');
+        DB::statement('ALTER TABLE alumnos_telefonos COMMENT = "Almacena la información relacionada con los números telefónicos de contacto del alumno"');
     }
 
     /**
@@ -38,6 +38,6 @@ class CreateAlumnosTelefonosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aspirantes_telefonos');
+        Schema::dropIfExists('alumnos_telefonos');
     }
 }
