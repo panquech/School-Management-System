@@ -16,6 +16,7 @@ class CreateAlumnosDomiciliosTable extends Migration
     {
         Schema::create('alumnos_domicilios', function (Blueprint $table) {
             $table->mediumIncrements('id')->unsigned()->comment('La llave primaria de la tabla');
+            $table->unsignedMediumInteger('alumno_id')->comment('La llave foránea para relacionar el domicilio con el ID de la solicitud del aspirante');
             $table->string('calle', 120)->nullable(false)->comment('Almacena la calle o avenida donde se encuentra el domicilio del aspirante');
             $table->string('num_exterior', 50)->nullable(true)->comment('Almacena el número exterior del domicilio capturado');
             $table->string('num_interior', 50)->nullable(true)->comment('Almacena el número interior, si aplica, del domicilio capturado');
@@ -27,6 +28,7 @@ class CreateAlumnosDomiciliosTable extends Migration
             $table->timestamps();
 
             // Declaración de llaves foráneas
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
             //$table->foreign('d_codigo')->references('d_codigo')->on('sepomex_cp');
             $table->index('d_codigo');

@@ -19,8 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('apellido1')->nullable(true);
             $table->string('apellido2')->nullable(true);
-            $table->string('email', 100)->unique()->nullable();
-            $table->string('code', 100)->unique();
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('confirmado')->nullable(true)->default(0)->comment('Almacena un indicador para saber si el usuario ya validó o no su email');
             $table->string('password');
