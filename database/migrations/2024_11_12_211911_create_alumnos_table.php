@@ -27,8 +27,8 @@ class CreateAlumnosTable extends Migration
             
             // Llaves foráneas
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
-            //$table->foreign('pais_id')->references('id')->on('cat_paises')->onUpdate('cascade');
-            //$table->foreign('nacionalidad_id')->references('id')->on('cat_nacionalidades')->onUpdate('cascade');
+            $table->foreign('pais_id')->references('id')->on('cat_paises')->onUpdate('cascade');
+            $table->foreign('nacionalidad_id')->references('id')->on('cat_nacionalidades')->onUpdate('cascade');
 
         });
     }

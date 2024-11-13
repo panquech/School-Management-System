@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AlumnoEjemploSeeder::class);
         $this->call(SepomexSeeder::class);
         $this->call(EjemploSeeder::class);
+        $this->call(PaisesNacionalidadesSeeder::class);
     }
 }
