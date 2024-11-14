@@ -20,7 +20,11 @@
       </div>
       <div class="card-body">
         @foreach($alumno as $a)
-        <a href="">{{ $a->user() }}</a>
+        <ul>
+          <li>
+            <a href="{{ route('alumno.show', $a->id) }}">{{ $a->id }} {{ $a->user->name }} {{ $a->user->apellido1 }} {{ $a->user->apellido2 }}</a>
+          </li>
+        </ul>
         @endforeach
       </div>
     </div>

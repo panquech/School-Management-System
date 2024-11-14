@@ -6,7 +6,9 @@ Auth::routes();
 Route::get('/privacy-policy', 'HomeController@privacy_policy')->name('privacy_policy');
 Route::get('/terms-of-use', 'HomeController@terms_of_use')->name('terms_of_use');
 
-Route::get('/alumno/datos', 'AlumnoController@index')->name('alumno.index');
+// Alumno's routes
+Route::get('/alumnos/datos', 'AlumnoController@index')->name('alumno.index');
+Route::get('/alumnos/datos/{id}', 'AlumnoController@show')->name('alumno.show');
 
 Route::group(['middleware' => 'auth'], function () {
 

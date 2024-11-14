@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Alumno\Alumnos;
 
-class CatNacionalidades extends Model
+class CatPaises extends Model
 {
     use HasFactory;
 

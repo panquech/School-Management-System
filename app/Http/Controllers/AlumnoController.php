@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alumno\Alumnos;
+use App\User;
 
 class AlumnoController extends Controller
 {
@@ -14,6 +15,8 @@ class AlumnoController extends Controller
      */
     public function index()
     {
+
+        //$alumno = User::select('name', 'apellido1', 'apellido2')->orderBy('id', 'desc')->paginate();
         $alumno = Alumnos::orderBy('user_id', 'desc')->paginate();
         return view("alumno.index", compact('alumno'));
     }
@@ -47,7 +50,13 @@ class AlumnoController extends Controller
      */
     public function show($id)
     {
-        //
+        dd($id);
+        
+        // Intenta encontrar al alumno con ese ID y cargar la relación 'user'
+        $alumno = Alumnos::with('user')->find($id); // Si no se encuentra, lanza ModelNotFoundException
+        // Si todo está bien, pasar a la vista
+        return view('alumno.show', compact('alumno'));
+
     }
 
     /**
