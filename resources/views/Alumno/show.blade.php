@@ -23,19 +23,19 @@
             <div class="col-md-4 pr-1">
               <div class="form-group">
                 <label>Nombre(s) *</label>
-                <input type="text" name="nombre" id="id_nombre" class="form-control" value="{{ $alumno->user->name }}">
+                <input type="text" name="nombre" id="id_nombre" class="form-control" value="{{ $alumno->user->name }}" disabled>
               </div>
             </div>
             <div class="col-md-4 px-1">
               <div class="form-group">
                 <label>Primer apellido *</label>
-                <input type="text" name="primera" id="id_primera" class="form-control" value="{{ $alumno->user->apellido1 }}">
+                <input type="text" name="primera" id="id_primera" class="form-control" value="{{ $alumno->user->apellido1 }}" disabled>
               </div>
             </div>
             <div class="col-md-4 pl-1">
               <div class="form-group">
                 <label for="exampleInputEmail1">Segundo apellido </label>
-                <input type="text" name="segunda" id="id_segunda" class="form-control" value="">
+                <input type="text" name="segunda" id="id_segunda" class="form-control" value="{{ $alumno->user->apellido2 }}" disabled>
               </div>
             </div>
           </div>

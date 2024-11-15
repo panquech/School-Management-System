@@ -50,8 +50,6 @@ class AlumnoController extends Controller
      */
     public function show($id)
     {
-        dd($id);
-        
         // Intenta encontrar al alumno con ese ID y cargar la relación 'user'
         $alumno = Alumnos::with('user')->find($id); // Si no se encuentra, lanza ModelNotFoundException
         // Si todo está bien, pasar a la vista
