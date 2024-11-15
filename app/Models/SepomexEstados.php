@@ -9,6 +9,7 @@ class SepomexEstados extends Model
 {
     protected $table = 'sepomex_estados';
     protected $primaryKey = 'c_estado';
+    protected $fillable = ['c_estado'];
 
     public function municipios()
     {
