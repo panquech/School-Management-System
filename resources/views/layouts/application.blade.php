@@ -16,16 +16,15 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Core stylesheets -->
-  {{-- <link rel="stylesheet" href="{{ url('/vendor/css/bootstrap.min.css')) }}"> --}}
-  <link rel="stylesheet" href="{{ url('/vendor/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ url('/vendor/css/paper-dashboard.css?v=2.0.0') }}">
-  <link rel="stylesheet" href="{{ url('/vendor/demo/demo.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/paper-dashboard.css?v=2.0.0') }}">
+  <link rel="stylesheet" href="{{ asset('assets/demo/demo.css') }}">
 
   @yield('styles')
 
   <!-- Application stylesheets -->
-  {{-- <link rel="stylesheet" href="{{ url('/vendor/css/wizard/bootstrap.min.css') }}"> --}}
-  {{-- <link rel="stylesheet" href="{{ url('/vendor/css/wizard/material-bootstrap-wizard.css') }}"> --}}
+  <link rel="stylesheet" href="{{ asset('assets/css/wizard/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/wizard/material-bootstrap-wizard.css') }}">
 
 </head>
 
@@ -39,26 +38,26 @@
   @yield('layout-content')
 
   <!-- Libs -->
-  <script src="{{ url('/vendor/js/core/jquery.min.js') }}"></script>
-  <script src="{{ url('/vendor/js/core/popper.min.js') }}"></script>
-  <script src="{{ url('/vendor/js/core/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
 
-  <script src="{{ url('/vendor/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
 
   <!-- Chart JS -->
-  <script src="{{ url('/vendor/js/plugins/chartjs.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
 
   <!--  Notifications Plugin    -->
-  <script src="{{ url('/vendor/js/plugins/bootstrap-notify.js') }}"></script>
-  <script src="{{ url('/vendor/js/plugins/sweetalert.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/sweetalert.min.js') }}"></script>
 
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ url('/vendor/js/paper-dashboard.min.js?v=2.0.0') }}"></script>
+  <script src="{{ asset('assets/js/paper-dashboard.min.js?v=2.0.0') }}"></script>
 
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ url('/vendor/demo/demo.js') }}"></script>
+  <script src="{{ asset('assets/demo/demo.js') }}"></script>
 
-  <script src="{{ url('/vendor/js/wizard/jquery.validate.min.js') }}"></script>
+  <script src="{{ asset('assets/js/wizard/jquery.validate.min.js') }}"></script>
   <script>
     var APP_URL = '{{ url('/') }}';
   </script>
