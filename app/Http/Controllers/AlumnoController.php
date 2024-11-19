@@ -104,14 +104,14 @@ class AlumnoController extends Controller
 
     public function contacto($id){
         // Se buscan los datos del aspirante
-        $alumno = Alumnos::where('user_id', $id)->first();
+        $alumno = Alumnos::where('id', $id)->first();
 
         // Se guarda en una variable una instancia del usuario
-        $user = User::where('id', $id)->first();
+        $user = User::where('id', $alumno->user->id)->first();
         
         // Obtener el domicilio del aspirante
-        $domicilio = AlumnosDomicilios::where('user_id', $id)->first();
-
+        $domicilio = AlumnosDomicilios::where('alumno_id', $alumno->id)->first();
+        
         $cp = SepomexCP::where('d_codigo',$alumno->domicilio->d_codigo)->first();
         $estado = SepomexEstados::where('c_estado', $cp->c_estado)->first();
         $municipio = SepomexMunicipios::where('c_mnpio', $cp->c_mnpio)->where('c_estado', $estado->c_estado)->first();
