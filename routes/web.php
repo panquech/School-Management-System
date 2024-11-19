@@ -10,6 +10,10 @@ Route::get('/terms-of-use', 'HomeController@terms_of_use')->name('terms_of_use')
 Route::get('/alumnos/datos', 'AlumnoController@index')->name('alumno.index');
 Route::get('/alumnos/datos/{id}', 'AlumnoController@show')->name('alumno.show');
 
+Route::get('/alumnos/datos/{id}/contacto','AlumnoController@contacto')->name('alumno.contacto.index');
+//Route::post('/solicitud/{solicitud_id}/domicilio','SolicitudController@solicitud_contacto')->name('solicitud.domicilio.store');
+
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', 'HomeController@dashboard')->name('home');

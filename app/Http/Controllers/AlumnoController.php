@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alumno\Alumnos;
+use App\Models\Alumno\AlumnosDomicilios;
 use App\User;
 use App\Models\CatNacionalidades;
 use App\Models\SepomexEstados;
+use App\Models\SepomexMunicipios;
 use App\Models\SepomexCP;
 
 class AlumnoController extends Controller
@@ -56,9 +58,12 @@ class AlumnoController extends Controller
         // Intenta encontrar al alumno con ese ID y cargar la relación 'user'
         $alumno = Alumnos::with('user')->find($id); // Si no se encuentra, lanza ModelNotFoundException
         // Utilizamos firts porque solo queremos uno, y ya está definido por el id del alumno.
-        $cp = SepomexCP::where('d_codigo',$alumno->domicilio->d_codigo)->first();
-        $estado = SepomexEstados::where('c_estado', $cp->c_estado)->first();
-        // Si todo está bien, pasar a la vista0
+        if($alumno->estado_id == null){
+            $estado = null;
+        } else {
+            $estado = SepomexEstados::where('c_estado', $alumno->estado_id)->first();
+        }
+        // Si todo está bien, pasar a la vista
         return view('alumno.show', compact('alumno', 'estado'));
 
     }
@@ -95,5 +100,26 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function contacto($id){
+        // Se buscan los datos del aspirante
+        $alumno = Alumnos::where('user_id', $id)->first();
+
+        // Se guarda en una variable una instancia del usuario
+        $user = User::where('id', $id)->first();
+        
+        // Obtener el domicilio del aspirante
+        $domicilio = AlumnosDomicilios::where('user_id', $id)->first();
+
+        $cp = SepomexCP::where('d_codigo',$alumno->domicilio->d_codigo)->first();
+        $estado = SepomexEstados::where('c_estado', $cp->c_estado)->first();
+        $municipio = SepomexMunicipios::where('c_mnpio', $cp->c_mnpio)->where('c_estado', $estado->c_estado)->first();
+
+        
+
+        // Se retorna la con todos los datos que se pintarán en la vista en caso de que ya hayan sido capturados
+        return view('alumno.contacto', compact('alumno', 'user', 'domicilio', 'estado', 'municipio'));
+
     }
 }

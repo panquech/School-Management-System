@@ -12,7 +12,7 @@
 <script src="{{ url('vendor/js/solicitud/captura_solicitud.js')}}" type="text/javascript"></script>
 @endsection
 @section('content')
-<div class="row">
+<div class="row d-flex justify-content-center">
   <div class="col-md-8">
     <div class="card card-user">
       <div class="card-header">
@@ -72,15 +72,16 @@
               <input type="text" class="form-control" value="{{ $alumno->pais->pais }}" disabled>
             </div>
           </div>
-
-          <div class="col-md-4 px-1">
-            <div class="form-group">
-              <label id="lblEstado" name="lblEstado">Estado de nacimiento *</label>
-              <input type="text" class="form-control" value="{{ $estado->d_estado }}">
+          @if($estado)
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label id="lblEstado" name="lblEstado">Estado de nacimiento *</label>
+                <input type="text" class="form-control" value="{{ $estado->d_estado }}">
+              </div>
             </div>
-          </div>
+          @endif
         </div>
-        <p>{{ $alumno }}</p>
+        <p></p>
       </div>
     </div>
   </div>
