@@ -14,6 +14,12 @@
 @section('content')
 <div class="row d-flex justify-content-center">
   <div class="col-md-8">
+    {{-- Verificar si hay un mensaje en la sesión --}}
+    @if(session('message'))
+        <div class="alert alert-warning">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="card card-user">
       <div class="card-header">
         <h4 class="card-title">Alumno</h4>

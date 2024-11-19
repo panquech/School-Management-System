@@ -110,16 +110,17 @@ class AlumnoController extends Controller
         $user = User::where('id', $alumno->user->id)->first();
         
         // Obtener el domicilio del aspirante
+
         $domicilio = AlumnosDomicilios::where('alumno_id', $alumno->id)->first();
-        
-        $cp = SepomexCP::where('d_codigo',$alumno->domicilio->d_codigo)->first();
-        $estado = SepomexEstados::where('c_estado', $cp->c_estado)->first();
-        $municipio = SepomexMunicipios::where('c_mnpio', $cp->c_mnpio)->where('c_estado', $estado->c_estado)->first();
-
-        
-
-        // Se retorna la con todos los datos que se pintarán en la vista en caso de que ya hayan sido capturados
-        return view('alumno.contacto', compact('alumno', 'user', 'domicilio', 'estado', 'municipio'));
-
+        if($domicilio){
+            $cp = SepomexCP::where('d_codigo',$alumno->domicilio->d_codigo)->first();
+            $estado = SepomexEstados::where('c_estado', $cp->c_estado)->first();
+            $municipio = SepomexMunicipios::where('c_mnpio', $cp->c_mnpio)->where('c_estado', $estado->c_estado)->first();
+    
+            // Se retorna la con todos los datos que se pintarán en la vista en caso de que ya hayan sido capturados
+            return view('alumno.contacto', compact('alumno', 'user', 'domicilio', 'estado', 'municipio'));
+        } else {
+            return redirect()->route('alumno.show', compact('id'))->with('message', 'No hay una dirección registrada');
+        }
     }
 }
