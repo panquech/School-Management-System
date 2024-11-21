@@ -63,8 +63,9 @@ class AlumnoController extends Controller
         } else {
             $estado = SepomexEstados::where('c_estado', $alumno->estado_id)->first();
         }
+        $estatus = $this->revisa_estatus($id);
         // Si todo está bien, pasar a la vista
-        return view('alumno.show', compact('alumno', 'estado'));
+        return view('alumno.show', compact('alumno', 'estado', 'estatus'));
 
     }
 
@@ -108,6 +109,8 @@ class AlumnoController extends Controller
 
         // Se guarda en una variable una instancia del usuario
         $user = User::where('id', $alumno->user->id)->first();
+
+        $estatus = $this->revisa_estatus($id);
         
         // Obtener el domicilio del aspirante
 
@@ -118,9 +121,34 @@ class AlumnoController extends Controller
             $municipio = SepomexMunicipios::where('c_mnpio', $cp->c_mnpio)->where('c_estado', $estado->c_estado)->first();
     
             // Se retorna la con todos los datos que se pintarán en la vista en caso de que ya hayan sido capturados
-            return view('alumno.contacto', compact('alumno', 'user', 'domicilio', 'estado', 'municipio'));
+            return view('alumno.contacto', compact('alumno', 'user', 'domicilio', 'estado', 'municipio', 'estatus'));
         } else {
             return redirect()->route('alumno.show', compact('id'))->with('message', 'No hay una dirección registrada');
         }
+    }
+
+    public function revisa_estatus($id)
+    {
+        $alumno = Alumnos::where('id', $id)->first();
+        // Esta función tiene por objeto revisar la captura de las secciones que componen el módulo de ASPIRANTE
+        // Para la sección de CONTACTO
+        $domicilio = AlumnosDomicilios::where('alumno_id', $id)->get();
+        if (!isset($domicilio[0]->id)) {
+            $domicilio = new AlumnosDomicilios;
+            $estatus_domicilio = "No hay datos";
+            $clase_domicilio = "text-muted";
+            $icono_domicilio = "<btn class='btn btn-sm btn-outline-default btn-round btn-icon'><i class='fa fa-exclamation'></i></btn>";
+        } else {
+            $estatus_domicilio = "Completado";
+            $clase_domicilio = "text-success";
+            $icono_domicilio = "<btn class='btn btn-sm btn-outline-success btn-round btn-icon'><i class='fa fa-check'></i></btn>";
+        }
+
+        $estatus['st_dom']['domicilio'] = $domicilio[0];
+        $estatus['st_dom']['estatus'] = $estatus_domicilio;
+        $estatus['st_dom']['clase'] = $clase_domicilio;
+        $estatus['st_dom']['icono'] = $icono_domicilio;
+
+        return $estatus;
     }
 }

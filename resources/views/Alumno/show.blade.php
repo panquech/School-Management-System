@@ -13,7 +13,12 @@
 @endsection
 @section('content')
 <div class="row d-flex justify-content-center">
-  <div class="col-md-8">
+  <div class="col-md-3">
+    {{-- Aquí va el menú --}}
+    @include('alumno.menu._datos-aspirante')
+    {{--  --}}
+  </div>
+  <div class="col-md-9">
     {{-- Verificar si hay un mensaje en la sesión --}}
     @if(session('message'))
         <div class="alert alert-warning">
