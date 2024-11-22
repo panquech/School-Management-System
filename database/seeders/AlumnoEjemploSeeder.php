@@ -31,7 +31,7 @@ class AlumnoEjemploSeeder extends Seeder
             'ruta_imagen' => null
         ]);
 
-        DB::table('alumnos')->insert([
+        $postulante = DB::table('alumnos')->insertGetId([
             'nombre_artistico' => 'Memo Farias',
             'fecha_nacimiento' => '1981-10-05',
             'rfc' => 'FAMJ811005DZ3',
@@ -39,6 +39,20 @@ class AlumnoEjemploSeeder extends Seeder
             'pais_id' => 86,
             'nacionalidad_id' => 86,
             'user_id' => $user_id
+        ]);
+
+        DB::table('alumnos_domicilios')->insert([
+            'alumno_id' => $postulante,
+            'calle' => 'AV. SIEMPRE VIVA',
+            'num_exterior' => '1211',
+            'num_interior' => null,
+            'referencia1' => 'ENTRE ANILLO PERIFÉRICO',
+            'referencia2' => 'Y CALZADA DE TLALPAN',
+            'colonia' => 'MOCTEZUMA 2A SECCION',
+            'd_codigo' => '15530',
+            'user_id' => $user_id,
+            'created_at' => Carbon::Now()
+
         ]);
     }
 }

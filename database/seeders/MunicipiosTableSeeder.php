@@ -11,7 +11,11 @@ class MunicipiosTableSeeder extends Seeder
 
     public function run()
     {
-        DB::table('municipios')->delete();
+        // Desactivamos las Safe Updates para poder eliminar la tabla si es que no existe
+        DB::statement('SET SQL_SAFE_UPDATES = 0;');
+        DB::table('municipios')->delete(); // Eliminar todos los registros
+        DB::statement('SET SQL_SAFE_UPDATES = 1;');
+
 
         $state_id = [
             // Ciudad de México
