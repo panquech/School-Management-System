@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Sadce;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Solicitud extends Model
+class Aceptacion extends Model
 {
     use HasFactory;
-
+    
     // Especificamos que se usará esta conexión a la base de datos, declarada en config/database.php
     protected $connection = 'sadce';
 
-    protected $table = 'solicitudes_aspirantes';
+    protected $table = 'aspirantes_aceptaciones';    
 }
