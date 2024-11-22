@@ -5,14 +5,14 @@ namespace App\Models\Sadce;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Aspirante extends Model
+class ConfiguracionesConvocatoria extends Model
 {
     use HasFactory;
 
     protected $connection = 'sadce';
 
-    public function user(){
-        return $this->belongsTo('App\Models\Sadce\User');
+    public function convocatoria(){
+        return $this->belongsTo('App\Models\Sadce\Convocatoria');
     }
 
     public function solicitudes(){

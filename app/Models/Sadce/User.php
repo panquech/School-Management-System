@@ -10,4 +10,8 @@ class User extends Model
     use HasFactory;
 
     protected $connection = 'sadce';
+
+    public function aspirante(){
+        return $this->hasOne('App\Models\Sadce\Aspirante');
+    }
 }

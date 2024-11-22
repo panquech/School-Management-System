@@ -11,4 +11,8 @@ class Convocatoria extends Model
 
     protected $connection = 'sadce';
     // Como este modelo sí sigue la convención, no es necesario especificar el nombre de la tabla.
+
+    public function configuraciones(){
+        return $this->hasMany('App\Models\Sadce\ConfiguracionesConvocatoria');
+    }
 }
