@@ -16,6 +16,8 @@ class Alumnos extends Model
     // Especificamos el nombre de las tablas ya que no se están siguiendo las convenciones de nombrar archivos.
     protected $table = 'alumnos';
 
+    protected $fillable = ['nombre_artistico', 'fecha_nacimiento', 'curp', 'rfc', 'sexo_id', 'otro_sexo', 'pais_id', 'estado_id', 'nacionalidad_id', 'user_id'];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
