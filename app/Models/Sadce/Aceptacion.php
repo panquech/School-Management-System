@@ -14,6 +14,8 @@ class Aceptacion extends Model
 
     protected $table = 'aspirantes_aceptaciones';
 
+    protected $fillable = ['solicitud_id', 'user_id'];
+
     public function solicitud(){
         return $this->belongsTo('App\Models\Sadce\SolicitudesAspirante');
     }
